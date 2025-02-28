@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Sopa de letras</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="juego">
+  <div id="visor">
+    <h2>Hola Mary Fernanda, encuentra estas palabras en la cuadricula de la izquierda</h2>
+    <p><strong>Instrucciones</strong><br/><span>haz clic en la primera de la palabra para iniciar la selección, luego haz clic en la ultima letra de la palabra para terminar la seleccion</span></p>
+    <ol id="palabras"></ol>
+    <div id="puntaje"><span>Puntaje:&nbsp;</span><span class="valor">0</span></div>
+    <div id="botones">
+      <button id="reiniciar" type="button" onclick="window.location.href='index.html';">Reiniciar</button>
+    </div>
+  </div>
+  <div id="lienzo">
+    <div id="cuadricula"></div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=blissfuljs%2Cdefault%2Ces2015%2Ces2016%2Ces2017%2Ces2018%2Ces2019%2Ces2020%2Ces2021%2Ces2022'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/sugar/2.0.6/sugar-es5.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js'></script>
+<script src='https://cdn.jsdelivr.net/gh/blashstar/blash.js@latest/src/blash.html.js?v=51'></script>
+<script src='https://cdn.jsdelivr.net/gh/blashstar/blash.js@latest/src/blash.css.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/keyboardjs/2.7.0/keyboard.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js'></script>
+<script src='https://colorjs.io/dist/color.global.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

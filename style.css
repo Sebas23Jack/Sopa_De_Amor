@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+:root {
+  --celda: 48px;
+  --espacio: calc(var(--celda) * 0.1);
+}
+html,
+body {
+  background-color: #000;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  font-family: 'Open Sans', sans-serif;
+  overflow: hidden;
+  background-color: #696969;
+}
+#juego {
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  background-color: #f5f5f5;
+  align-items: center;
+  transition: transform 50ms linear;
+}
+#lienzo {
+  padding: 2rem;
+  display: grid;
+  place-items: center;
+  place-content: center;
+  align-self: stretch;
+}
+#cuadricula {
+  position: relative;
+  display: grid;
+  align-self: stretch;
+  place-items: center;
+  place-content: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  gap: var(--espacio);
+}
+#cuadricula .letra {
+  aspect-ratio: 1;
+  background-color: rgba(220,220,220,0.75);
+  display: grid;
+  place-items: center;
+  place-content: center;
+  width: var(--celda);
+  border-radius: 100%;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+#cuadricula .letra span {
+  display: block;
+  background-color: transparent;
+  aspect-ratio: 1;
+  width: 1.5em;
+  border-radius: 100%;
+  text-align: center;
+}
+#cuadricula .letra.resaltada {
+  outline: calc(var(--espacio) * 0.5) solid #c0c0c0;
+  background-color: #696969;
+}
+#cuadricula .letra.ignorada {
+  opacity: 0.5;
+  color: #808080;
+}
+#visor {
+  background-color: #696969;
+  padding: 1rem 2rem;
+  color: #f5f5f5;
+  align-self: stretch;
+  position: sticky;
+  display: grid;
+  grid-template-rows: auto auto auto 1fr auto auto;
+}
+#visor p {
+  font-size: 1.2rem;
+}
+.linea {
+  position: absolute;
+  pointer-events: none;
+  background-color: rgba(255,215,0,0.5);
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: var(--celda);
+  height: var(--celda);
+  border-radius: var(--celda);
+  transform-origin: calc((var(--celda) / 2));
+  transition: background 0.3s, border 0.2s;
+}
+.linea.correcta {
+  background-color: transparent;
+  border: 3px solid #008000;
+}
+.linea.incorrecta {
+  background-color: rgba(255,0,0,0.5);
+  border: 3px solid #8b0000;
+}
+#palabras {
+  color: #f5f5f5;
+  font-weight: bold;
+  -moz-columns: 2;
+       columns: 2;
+  -moz-column-rule: 1px solid #808080;
+       column-rule: 1px solid #808080;
+  list-style: decimal-leading-zero;
+  list-style-position: inside;
+  padding: 0;
+  position: sticky;
+  font-size: 1.5rem;
+  align-self: start;
+}
+#palabras li {
+  white-space: nowrap;
+}
+#palabras .encontrada {
+  text-decoration: line-through;
+  color: #32cd32;
+}
+#puntaje {
+  color: #f5f5f5;
+}
+#puntaje .valor {
+  font-weight: bold;
+}
+#botones {
+  margin-block: 1rem;
+}
+#botones button {
+  display: block;
+  background-color: #808080;
+  border: none;
+}
